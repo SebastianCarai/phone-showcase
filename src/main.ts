@@ -14,7 +14,7 @@ const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 1, 10
 // const quaternion = new THREE.Quaternion();
 // quaternion.setFromAxisAngle(new THREE.Vector3(1, 0, 0).normalize(), -Math.PI/2);
 // camera.quaternion.multiply(quaternion);
-camera.position.set(0, 1.5, 4);
+camera.position.set(0, 1.25, 4);
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 3);
 const leftSpotLight = new THREE.SpotLight(0xffffff, 3, 10, Math.PI / 6, .2, 0.3)
