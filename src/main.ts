@@ -19,7 +19,8 @@ dracoLoader.setDecoderPath( '/draco/' );
 gltfLoader.setDRACOLoader( dracoLoader );
 const start = Date.now();
 const model = await gltfLoader.loadAsync('/models/phone.glb');
-console.log(start - (Date.now()));
+const end = Date.now() - start;
+(document.querySelector('#loading-time') as HTMLElement)!.innerHTML = (end / 1000).toString() + 's';
 
 console.log(model);
 
