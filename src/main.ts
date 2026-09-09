@@ -10,6 +10,10 @@ await setupScene();
 
 gsap.registerPlugin(Observer);
 
+function returnAnimationIndex(){
+  
+}
+
 Observer.create({
   target: window,
   onDown: async () => {
@@ -36,6 +40,14 @@ Observer.create({
   },
   onStop: () => {
     state.isAnimating = false;
+  },
+  onChange: (self) => {
+    // self.event.type will be 'wheel', 'touchstart', 'touchmove', etc.
+    if (self.event.type === "wheel") {
+      (document.querySelector('#loading-time') as HTMLElement)!.innerHTML = 'mouse'
+    } else if (self.event.type.includes("touch")) {
+      (document.querySelector('#loading-time') as HTMLElement)!.innerHTML = 'touch'
+    }
   }
 })
 
