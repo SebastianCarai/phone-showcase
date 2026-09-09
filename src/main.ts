@@ -10,9 +10,9 @@ await setupScene();
 
 gsap.registerPlugin(Observer);
 
-function returnAnimationIndex(){
+// function returnAnimationIndex(){
   
-}
+// }
 
 Observer.create({
   target: window,
@@ -23,7 +23,7 @@ Observer.create({
 
     if(state.index < state.maxRotations){
       state.index++;
-      const r : 'r1' | 'r2' = `r${state.index}` as 'r1' | 'r2';
+      const r : 'r0' | 'r1' | 'r2' = `r${state.index}` as 'r0' | 'r1' | 'r2';
       rotateBody(r);
     }
   },
@@ -34,7 +34,7 @@ Observer.create({
     
     if(state.index > 0){
       state.index--;
-      const r : 'r1' | 'r2' = `r${state.index}` as 'r1' | 'r2';
+      const r : 'r0' | 'r1' | 'r2' = `r${state.index}` as 'r0' | 'r1' | 'r2';
       rotateBody(r);
     }
   },
@@ -51,7 +51,7 @@ Observer.create({
   }
 })
 
-async function rotateBody(r: 'r1' | 'r2'){
+async function rotateBody(r: 'r0' | 'r1' | 'r2'){
   const startQuaternion = phone.body.quaternion.clone();
 
   const targetQuaternion = new Quaternion();
