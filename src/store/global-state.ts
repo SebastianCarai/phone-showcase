@@ -21,3 +21,10 @@ export const phone : Phone = {
     cover: new Object3D(),
     display: new Object3D(),
 }
+
+
+export const state = {
+    index: 0,
+    maxRotations: 2,
+    isAnimating: false
+}
